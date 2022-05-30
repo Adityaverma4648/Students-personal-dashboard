@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body-login{
+    height : 100vh; 
+    width:100vw;
+    background-color: rgb(212, 200, 200);
+}
+
+.form-sec{
+    height: 60%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(65, 65, 65,0.3) ;
+    border-radius: 5px;
+     
+
+    form{
+             height: 50%;
+             width: 100%;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+            //  padding: 2rem;
+             input{
+                 padding: 8px 10px;
+                 margin: 10px 0px;
+             }
+             a{
+                //  background-color: grey;
+                 width: 100%;
+                 text-align: right;
+
+             }
+             
+    }
+    .submit{
+          width: 40%;
+          padding: 8px 2rem;
+    }
+}
+
+
+// dashboard---------------------------------------------------------------------------
+.dashboard-menu{
+    z-index: 99;
+    min-height: 100vh;
+   width: 13%;
+   box-shadow: 9px 7px 9px 9px solid #000;
+}
+.dashboard-content{
+    width: 87%;
+}
+.menu-section{
+    button{
+        width:100%;
+    }
+    span{
+        width: 80%;
+        img{
+            height: 21px;
+        }
+    }
+    i{
+        width: 20%;
+    }
+
+    
+}
+.footer-menu{
+    div{
+        a{
+            img{
+                height: 21px;
+            }
+        }
+    }
+}
+.navbar{
+    top: 0;
+    a{
+        img{
+            height: 21px;
+        }
+    }
+    button{
+        img{
+            height:21px;
+        }
+    }
+}
+
+@media only screen and ( max-width : 1200px){
+    .dashboard-menu{
+        min-height: 100vh;
+       width: 13%;
+
+    }
+    .dashboard-content{
+        width: 87%;
+      } 
+    }
+
+@media only screen and ( max-width : 900px){
+              .greet-username{
+                         p{
+                             display: none;
+                         }
+                }
+            .form-sec{
+                 width: 80%;
+            }
+            .dashboard-menu{
+
+               width: 13%; 
+            }
+            .menu-section{
+                button{
+                    span{
+                        strong{
+                            display: none;
+                        }
+                    }
+                    i{
+                        display: none;
+                    }
+                }
+         }
+            .dashboard-content{
+                width: 87%;
+            }
+            .navbar{
+                top: 0;
+                a{
+                    img{
+                        // height: 16px;
+                        display: none;
+                    }
+                }
+            }
+
+}

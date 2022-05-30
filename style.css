@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.body-login {
+  height: 100vh;
+  width: 100vw;
+  background-color: #d4c8c8;
+}
+
+.form-sec {
+  height: 60%;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid rgba(65, 65, 65, 0.3);
+  border-radius: 5px;
+}
+
+.form-sec form {
+  height: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-sec form input {
+  padding: 8px 10px;
+  margin: 10px 0px;
+}
+
+.form-sec form a {
+  width: 100%;
+  text-align: right;
+}
+
+.form-sec .submit {
+  width: 40%;
+  padding: 8px 2rem;
+}
+
+.dashboard-menu {
+  z-index: 99;
+  min-height: 100vh;
+  width: 13%;
+  -webkit-box-shadow: 9px 7px 9px 9px solid #000;
+          box-shadow: 9px 7px 9px 9px solid #000;
+}
+
+.dashboard-content {
+  width: 87%;
+}
+
+.menu-section button {
+  width: 100%;
+}
+
+.menu-section span {
+  width: 80%;
+}
+
+.menu-section span img {
+  height: 21px;
+}
+
+.menu-section i {
+  width: 20%;
+}
+
+.footer-menu div a img {
+  height: 21px;
+}
+
+.navbar {
+  top: 0;
+}
+
+.navbar a img {
+  height: 21px;
+}
+
+.navbar button img {
+  height: 21px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .dashboard-menu {
+    min-height: 100vh;
+    width: 13%;
+  }
+  .dashboard-content {
+    width: 87%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .greet-username p {
+    display: none;
+  }
+  .form-sec {
+    width: 80%;
+  }
+  .dashboard-menu {
+    width: 13%;
+  }
+  .menu-section button span strong {
+    display: none;
+  }
+  .menu-section button i {
+    display: none;
+  }
+  .dashboard-content {
+    width: 87%;
+  }
+  .navbar {
+    top: 0;
+  }
+  .navbar a img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
