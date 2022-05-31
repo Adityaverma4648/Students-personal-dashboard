@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard:php code</title>
 
-    <!-- icons-------------------------------------------------- -->
+     <!-- charts import -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+     <!-- icons-------------------------------------------------- -->
 
                   <script src="https://kit.fontawesome.com/8dc03a4776.js" crossorigin="anonymous"></script>
 
@@ -28,8 +31,10 @@
 
 </head>
 <body>
-    <section class="row dashboard p-2 bg-dark d-flex justify-content-center align-items-center">
-          <div class="dashboard-menu bg-dark">
+    <section class="row dashboard p-2 d-flex justify-content-center align-items-center" style="background-color: #000;">
+      
+    <!-- dashboard menu--------------------------------------------------------------------------- -->
+    <div class="dashboard-menu bg-dark">
               <div class="container py-2 border-bottom">
                   <strong class="h3 text-white">
                       LOGO
@@ -317,67 +322,94 @@
                 </div>
 
                 <!-- footer-menu -->
-                <div class="container-fluid row d-flex bg-black py-4 footer-menu">
-                    <div class="col">
+                <div class="row d-flex py-4 px-2 footer-menu">
+                    <div class="col  ">
                          <a href="#">
                           <img src="./img/gear.png" alt="settings">
                          </a>
                     </div>
-                    <div class="col">
+                    <div class="col  ">
                       <a href="#">
                         <img src="./img/email.png" alt="email">
                       </a>
-                 </div>
-                    <div class="col">
+                    </div>
+                    <div class="col  ">
                       <a href="index.php">
                         <img src="./img/log-out.png" alt="logout">
                       </a>
-                 </div>
+                    </div>
               
-                  </div>
-            </div>
-         
-          <div class="dashboard-content bg-danger text-white">
-                  <nav class="navbar navbar-expand-lg navbar-dark .fixed-top" style="display:none;">
+                </div>
+    </div>
+<!-- 
+
+
+
+
+
+
+scroll down
+to see the 
+dashboard content
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+            <!-- dashboard content ----------------------------------------------------------------------------------------------------->
+          <div class="dashboard-content text-white" style="background-color: #000;">
+                  <div class="row">
+                  <nav class="navbar navbar-expand-lg bg-dark px-3 ">
                       <a href="#" class="float-start"><img src="./img/menu.png" alt="toggle" onclick="toggle_dashboard_menu()"></a>
                       <button class="navbar-toggler d-lg-none " type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                           aria-expanded="false" aria-label="Toggle navigation"><img src="./img/menu.png" alt="toggle-navbar"></button>
-                      <div class="collapse navbar-collapse bg-info " id="collapsibleNavId" style="width:15vw;">
-                             <div class="d-flex flex-row-reverse bg-secondary" style="width: 10%;">
-                                    <div class="container d-flex bg-danger">
-                                    <img src="./img/profile.png" alt="profile" class="col-sm-4 rounded-circle bg-muted" style="height: 24px; width:
-                                    auto;">
-                                          <span class="small text-white">UserName</span>
-                                    </div>
-
-                                  <div class="dropdown px-0 py-0" style="width:10%;">
+                      <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavId">
+                             <div class=" d-flex px-3">
+                                  <div class="dropdown px-0 py-0">
                                       <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                                                       <img src="./img/messenger.png" alt="messages" style="height: 21px;" class="px-2">
                                       </button>
-                                              <ul class="dropdown-menu bg-primary p-5">
-                                                <li><div class="dropdown-item text-info small" href="#" >Lorem ipsum dolor sit amet consectetur adipisicing elit. A delectus est mollitia esse inventore modi.</div></li>
+                                              <ul class="dropdown-menu bg-primary">
+                                                <li><div class="dropdown-item text-info small" href="#" >Lorem</div></li>
                                                 <li><div class="dropdown-item text-info small" href="#" >Link 2</div></li>
                                                 <li><div class="dropdown-item text-info small" href="#" >Link 3</div></li>
                                               </ul>
-                                   </div>      
-                                
-                                   
+                                  </div> 
+                                  
+                                  <div class="container d-flex ">
+                                         <img src="./img/profile.png" alt="profile" class="col-sm-4 rounded-circle bg-muted" style="height: 24px; width:auto;">
+                                          <span class="small text-white">UserName</span>
+                                    </div>
                              </div>
                       </div>
                   </nav>  
                   
-                  <div style="width:100%;">
-                    <div class="container-fluid d-flex bg-success" style="width: 100vw;">
-                      <span class="h3 bg-info" style="width: 80%;">
+                  </div>
+                  <div>
+                    <!-- perks--------------------------------------------------------- -->
+                    <div class="row bg-success d-flex py-2 border-bottom mt-3">
+                      <span class="h5" style="width: 97%;">
                       Our Perks and Achivements
                       </span>
-                      <span> 
-                         <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#perks">
-                         <img src="./img/down-filled-triangular-arrow.png" alt="dwn" style="height: 21px;">
+                      <span style="width:3%;"> 
+                         <button type="button" class="btn  px-0" data-bs-toggle="collapse" data-bs-target="#perks">
+                         <img src="./img/down-filled-triangular-arrow (1).png"  class="float-end" alt="dwn" style="height: 16px;">
                          </button> 
                       </span>
                     </div>
-                    <div  class="row bg-success py-2" id="perks">
+                    <!-- toggle-container---------------------------------------------- -->
+                    <div  class="row bg-success py-2 " id="perks"  >
                               <!-- NUmbers--------------------------------------------------------------------------------- -->
                               <div class="col border-end border-white text-center"> 
                                     <span class="small">
@@ -434,13 +466,139 @@
                               </div>
                         </div>
                   </div> 
-                  
-                  <div class="container">
+                    <!--students info  -->
+                    <div class="row my-3 d-flex justify-content-center align-items-center" >
+                        <div class="row bg-primary d-flex border-bottom">
+                                 <span class="h5" style="width: 97%;">
+                                 Personal details
+                                 </span>
+                                 <span style="width:3%;"> 
+                                    <button type="button" class="btn px-0" data-bs-toggle="collapse" data-bs-target="#info">
+                                    <img src="./img/down-filled-triangular-arrow (1).png" alt="dwn" class="dropdown-icon">
+                                    </button> 
+                                 </span>
+                        </div>
+                        <div class="row bg-primary " id="info">
+                                         <div class="col-sm-5 text-center">
+                                              <img src="./img/profile.png" alt="profile" class="profile" >
+                                              <br>
+                                              <span class="h4">
+                                                UserName
+                                              </span>
+                                              <ul class="nav py-2 d-flex align-items-center justify-content-center">
+                                                <li class="active px-2 border-end border-white">
+                                                   Course
+                                                   <br>
+                                                   <span class="text-body">
+                                                     Lorems
+                                                   </span>
+                                                </li>
+                                                <li class="px-2 border-end border-white">
+                                                  Branch
+                                                  <br>
+                                                  <span class="text-body">
+                                                    Lorems
+                                                  </span>
+                                                </li>
+                                                <li class="px-2 border-end border-white">
+                                                   Roll Number 
+                                                   <br>
+                                                   <span class="text-body">
+                                                     Lorems
+                                                   </span>     
+                                                </li>
+                                                <li class="px-2"> 
+                                                   Students ID  
+                                                   <br>
+                                                   <span class="text-body">
+                                                     Lorems
+                                                   </span>   
+                                                </li>
+                                              </ul>
+                                        </div>
+                                        <div class="col-sm-5 text-center">
+                                          <ul class="nav py-2 d-flex flex-column  justify-content-center">
+                                            <li class="py-2 text-start"> 
+                                               Mothers Name :
+                                            </li>
+                                            <li class="py-2 text-start">
+                                              Fathers Name :
+                                            </li>
+                                            <li class="py-2 text-start">
+                                               Address :     
+                                            </li>
+                                            <li class="py-2 text-start"> 
+                                                 Contact No :                      
+                                            </li>
+                                            <li class="py-2 text-start">
+                                                Email ID : 
+                                            </li>
+                                          </ul>
+                                          <button type="button" class="btn btn-success">
+                                                 Update-info
+                                          </button>
+                                          <button type="button" class="btn btn-outline-warning  ">
+                                                 Change password
+                                          </button>
+                                    </div>
+                                        
+                        </div>
+                    </div>
 
-                  </div>
-          </div>
+
+
+
+
+                      <!--students info  -->
+                      <div class="row my-3 skills-sec d-flex align-items-center justify-content-center" >
+                        <div class="row d-flex border-bottom">
+                                  <span class="h5" style="width: 97%;">
+                                    Skills
+                                  </span>
+                                  <span style="width:3%;"> 
+                                     <button type="button" class="btn px-0" data-bs-toggle="collapse" data-bs-target="#chart">
+                                     <img src="./img/down-filled-triangular-arrow (1).png" class="dropdown-icon" alt="dwn" >
+                                     </button> 
+                                  </span>
+                        </div>
+                       
+                        <div class="row" id="chart">
+                                   <canvas id="myChart"></canvas>
+                       </div>
+                    </div>
+
+
                       
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script>
+            function toggle_dashboard_menu(){
+
+            }
+    </script> -->
+    <script src="chart.js"></script>
 </body>
 </html>

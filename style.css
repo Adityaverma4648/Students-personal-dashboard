@@ -65,8 +65,21 @@
   padding: 8px 2rem;
 }
 
+#chart {
+  max-height: 50vh;
+}
+
+#chart canvas {
+  max-height: 40vh;
+}
+
+.dropdown-icon {
+  height: 16px;
+}
+
 .dashboard-menu {
-  z-index: 99;
+  left: 0;
+  top: 0;
   min-height: 100vh;
   width: 13%;
   -webkit-box-shadow: 9px 7px 9px 9px solid #000;
@@ -74,7 +87,9 @@
 }
 
 .dashboard-content {
-  width: 87%;
+  right: 0;
+  top: 0;
+  max-width: 87%;
 }
 
 .menu-section button {
@@ -93,6 +108,10 @@
   width: 20%;
 }
 
+.footer-menu {
+  background-color: #464646;
+}
+
 .footer-menu div a img {
   height: 21px;
 }
@@ -107,6 +126,19 @@
 
 .navbar button img {
   height: 21px;
+}
+
+.profile {
+  height: 300px;
+}
+
+.skills-sec {
+  background: #780206;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#061161), to(#780206));
+  background: linear-gradient(to right, #061161, #780206);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media only screen and (max-width: 1200px) {

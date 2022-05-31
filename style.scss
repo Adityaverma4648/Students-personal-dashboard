@@ -47,17 +47,28 @@
           padding: 8px 2rem;
     }
 }
-
-
+#chart{
+    max-height: 50vh;
+    canvas{
+          max-height: 40vh;
+    }
+}
+.dropdown-icon{
+    height: 16px;
+}
 // dashboard---------------------------------------------------------------------------
 .dashboard-menu{
-    z-index: 99;
+    left: 0;
+    top: 0;
+    // z-index: 99;
     min-height: 100vh;
    width: 13%;
    box-shadow: 9px 7px 9px 9px solid #000;
 }
 .dashboard-content{
-    width: 87%;
+    right: 0;
+    top:0;
+    max-width: 87%;
 }
 .menu-section{
     button{
@@ -76,6 +87,7 @@
     
 }
 .footer-menu{
+    background-color: rgb(70, 70, 70);
     div{
         a{
             img{
@@ -96,6 +108,15 @@
             height:21px;
         }
     }
+}
+.profile{
+    height:300px;
+}
+.skills-sec{
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 @media only screen and ( max-width : 1200px){
