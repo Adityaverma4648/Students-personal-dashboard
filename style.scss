@@ -4,13 +4,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.dashboard-page{
+    height:100vh;
+    width: 100vw;
+}
 
 .body-login{
     height : 100vh; 
     width:100vw;
     background-color: rgb(212, 200, 200);
 }
-
+.dashboard{
+    background-color: #000;
+    height: auto;
+    width: 100vw;
+}
 .form-sec{
     height: 60%;
     width: 30%;
@@ -48,9 +56,9 @@
     }
 }
 #chart{
-    max-height: 50vh;
+    max-height: 60vh;
     canvas{
-          max-height: 40vh;
+          max-height: 50vh;
     }
 }
 .dropdown-icon{
@@ -61,18 +69,25 @@
     left: 0;
     top: 0;
     // z-index: 99;
-    min-height: 100vh;
+    height: auto;
    width: 13%;
    box-shadow: 9px 7px 9px 9px solid #000;
 }
 .dashboard-content{
     right: 0;
     top:0;
+    background-color: #000;
     max-width: 87%;
+    // max-height: 100vh;
+    // overflow-y: scroll;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
 }
 .menu-section{
     button{
         width:100%;
+        // background: ;
     }
     span{
         width: 80%;
@@ -119,6 +134,7 @@
 
 }
 
+
 @media only screen and ( max-width : 1200px){
     .dashboard-menu{
         min-height: 100vh;
@@ -126,7 +142,8 @@
 
     }
     .dashboard-content{
-        width: 87%;
+        width: 83%;
+        margin-left: 0;
       } 
     }
 
@@ -156,7 +173,8 @@
                 }
          }
             .dashboard-content{
-                width: 87%;
+                width: 83%;
+                margin-left: 0;
             }
             .navbar{
                 top: 0;
@@ -167,5 +185,18 @@
                     }
                 }
             }
+
+}
+@media only screen and ( max-width : 900px){
+
+  .dashboard-menu{
+
+     width: 13%; 
+     display: none;
+  }
+  .dashboard-content{
+      width: 95%;
+      margin-left: 0;
+  }
 
 }

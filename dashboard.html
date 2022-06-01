@@ -30,11 +30,11 @@
    <link rel="stylesheet" href="style.css">      
 
 </head>
-<body>
-    <section class="row dashboard p-2 d-flex justify-content-center align-items-center" style="background-color: #000;">
+<body class="container-fluid dashboard-page">
+    <section class=" dashboard row p-2">
       
     <!-- dashboard menu--------------------------------------------------------------------------- -->
-    <div class="dashboard-menu bg-dark">
+    <div class="col-lg-2 dashboard-menu bg-dark">
               <div class="container py-2 border-bottom">
                   <strong class="h3 text-white">
                       LOGO
@@ -368,7 +368,7 @@ dashboard content
 
 
             <!-- dashboard content ----------------------------------------------------------------------------------------------------->
-          <div class="dashboard-content text-white" style="background-color: #000;">
+          <div class="col-lg-10 ms-4 dashboard-content text-white">
                   <div class="row">
                   <nav class="navbar navbar-expand-lg bg-dark px-3 ">
                       <a href="#" class="float-start"><img src="./img/menu.png" alt="toggle" onclick="toggle_dashboard_menu()"></a>
@@ -387,7 +387,7 @@ dashboard content
                                               </ul>
                                   </div> 
                                   
-                                  <div class="container d-flex ">
+                                  <div class="container d-flex align-items-center justify-content-center">
                                          <img src="./img/profile.png" alt="profile" class="col-sm-4 rounded-circle bg-muted" style="height: 24px; width:auto;">
                                           <span class="small text-white">UserName</span>
                                     </div>
@@ -551,7 +551,7 @@ dashboard content
 
                       <!--students info  -->
                       <div class="row my-3 skills-sec d-flex align-items-center justify-content-center" >
-                        <div class="row d-flex border-bottom">
+                        <div class="row py-2 d-flex border-bottom">
                                   <span class="h5" style="width: 97%;">
                                     Skills
                                   </span>
@@ -562,9 +562,16 @@ dashboard content
                                   </span>
                         </div>
                        
-                        <div class="row" id="chart">
-                                   <canvas id="myChart"></canvas>
-                       </div>
+                        <div class="row">
+                          <div class="col-sm-5">
+                            <p>
+                              we track your progress and help you Improve!
+                            </p>
+                          </div>
+                          <div class="col-sm-6 d-flex justify-content-center align-items-center" id="chart">
+                            <canvas id="myChart"></canvas>
+                </div>
+                        </div>
                     </div>
 
 
