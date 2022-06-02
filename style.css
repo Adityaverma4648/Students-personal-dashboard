@@ -77,11 +77,11 @@
 }
 
 #chart {
-  max-height: 60vh;
+  max-height: 50vh;
 }
 
 #chart canvas {
-  max-height: 50vh;
+  max-height: 40vh;
 }
 
 .dropdown-icon {
@@ -151,6 +151,11 @@
   background: -webkit-gradient(linear, left top, right top, from(#061161), to(#780206));
   background: linear-gradient(to right, #061161, #780206);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#Form-add-member input {
+  border: none;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 1200px) {

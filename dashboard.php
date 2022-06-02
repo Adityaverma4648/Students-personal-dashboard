@@ -31,6 +31,9 @@
 
 </head>
 <body class="container-fluid dashboard-page">
+     <?php
+         include 'conn.php';
+     ?>
     <section class=" dashboard row p-2">
       
     <!-- dashboard menu--------------------------------------------------------------------------- -->

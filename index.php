@@ -22,30 +22,29 @@
                <link rel="stylesheet" href="style.css">      
 </head>
 <body class="d-flex justify-content-center align-items-center body-login">
+<?php
+         include 'conn.php';
+?>
     <section class="form-sec container">
                <h3 class="text-center text-muted">
-                    Login Form</h3>
+                    Students Login Page</h3>
                     <?php
                          if ($_SERVER["REQUEST_METHOD"] == "POST") { 
                                        $userid = $_POST['userid'];
                                        $password = $_POST['password'];
-
-
                                        if($_POST['submit']){
                                           header('Location: dashboard.php');
                                        }
-                    }
+                          }
                     ?>
 
                <form action="" method="post">
                     
-                    <input type="text" class="form-control" placeholder="User Id" name="userid">
+                    <input type="text" class="form-control" placeholder="User Id" name="userid" required>
 
-                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required>
                           <a href="#" class="btn text-muted " >Forgot password ?</a>
                     <input type="submit" class="submit btn btn-outline-dark " name="submit" value="login">
-
-
                </form>
                <h3 class="text-muted">
                    LOGO
