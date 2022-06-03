@@ -27,7 +27,8 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- SCSS -------------------------------------------- -->
-   <link rel="stylesheet" href="style.css">      
+<link rel="stylesheet" href="../Students-personal-dashboard/style.css">
+    
 
 </head>
 <body class="container-fluid dashboard-page">
@@ -458,73 +459,12 @@ dashboard content
                                    </table>
                             </div>
                             <span class="container">
-                               <button  type ="button" data-bs-target="#Form-add-member" data-bs-toggle="modal" class="btn btn-outline-warning">
+                               <a href = "addmember.php" class="btn btn-outline-warning">
                                      Add-new-members
-                                                  </button>
+                               </a>
                             </span>
                   </div> 
-                              <!-- The Modal -->
-                                
-                           <div class="modal" id="Form-add-member" >
-                                <div class="modal-dialog">
-                                  <div class="modal-content" style="background-color: #a6a6a6">
-                                  <?php
-                                       if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-                                           $designation = $_POST['designation'];
-                                           $username = $_POST['username'];
-                                           $userid = $_POST['userid'];
-                                           $email = $_POST['email'];
-                                           $password = $_POST['password'];
-                                           $mothername = $_POST['mothername'];
-                                           $fathername = $_POST['fathername'];
-                                           $branch = $_POST['branch'];
-                                           $course = $_POST['course'];
-                                           $DOB  = $_POST['DOB'];
-                                
-                                             
-                                      // binding
-                                      $stmt = $conn->PREPARE("INSERT INTO collegeadmindashboard(designation, username, userid,  email , password, mothername ,fathername , branch , course ,DOB) VALUES (?,?,?,?,?,?,?,?,?,?)");
-                                      $stmt->bind_param("ssssssssss", $designation, $username ,$userid, $email , $password, $mothername ,$fathername , $branch , $course ,$DOB);
-
-                                      if($_POST['submit']){
-                                        header('Location : college.php');
-                                      }
-
-                                      $stmt->execute();
-                                      $stmt->close();
-                                      }
-                                  ?>
-                                  <form method="post" action="">
-                                                   <!-- Modal Header -->
-                                                   <div class="modal-header">
-                                                     <h5 class="modal-title text-dark">Add New Member</h5>
-                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                   </div>
-
-                                                   <!-- Modal body --> 
-                                                   <div class="modal-body d-flex flex-column">
-                                                              <input type="text" name="designation" placeholder="Enter your post"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="username" placeholder="Enter user name" class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="userid" placeholder="Enter user id" class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="email" placeholder="Enter email"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="password" placeholder="Enter user password"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="mothername" placeholder="Enter user mothername"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="fathername" placeholder="Enter user fathername"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="branch" placeholder="Enter user branch" class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="course" placeholder="Enter user course" class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-                                                              <input type="text" name="DOB" placeholder="Enter user DOB"  class="bg-dark text-white py-2 px-1 my-1 border-0" required>
-
-                                                   </div>
-
-                                                   <!-- Modal footer -->
-                                                   <div class="modal-footer">
-                                                     <input type="submit" class="btn btn-success" name="submit">
-                                                   </div>
-                                   </form>
-                                  </div>
-                                </div>
-
-                              
+                        
                             
     </section>
 

@@ -33,7 +33,7 @@
               $course = $_POST['course'];
               $q = "update collegeadmindashboard set id = $id , username = '$username' , designation = '$designation', email = '$email' , branch = '$branch' , course = '$course' where id = $id";
 
-              header('Location : collegeauthdashboard.php');
+              header('Location : managementSystem.php');
           }
 
 ?>

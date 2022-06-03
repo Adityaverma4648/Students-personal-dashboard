@@ -7,5 +7,5 @@
 
     mysqli_query($conn,$del);
         
-    header('Location : collegeauthdashboard.php');
+    header('Location : managementSystem.php');
 ?>

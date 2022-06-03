@@ -19,7 +19,7 @@
 
 <!-- Latest compiled JavaScript -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../Students-personal-dashboard/style.css">
 
 </head>
 <body>
@@ -33,13 +33,10 @@
                                        $userid = $_POST['userid'];
                                        $password = $_POST['password'];
                                         
-                                       $q = "select * FROM collegeadmindashboard where userid = $userid";
+                                       $q = "select * FROM collegeadmindashboard where userid = '$userid'  ";
                                        $query = mysqli_query($conn , $q);   
-                                       $present = mysqli_num_rows($result);
+                                       $present = mysqli_num_rows($query);
                                        if($present){
-                                        ?>
-                                            <script>alert('email not registered')</script>     
-                                        <?php 
                                          header ('Location : collegeauthdashboard.php');
                                        }
                           }

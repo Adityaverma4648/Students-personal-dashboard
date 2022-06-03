@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard:php code</title>
 
-     <!-- charts import -->
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <!-- charts import
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
      <!-- icons-------------------------------------------------- -->
 
@@ -27,7 +27,8 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- SCSS -------------------------------------------- -->
-   <link rel="stylesheet" href="style.css">      
+<link rel="stylesheet" href="../Students-personal-dashboard/style.css">
+   
 
 </head>
 <body class="container-fluid dashboard-page">
