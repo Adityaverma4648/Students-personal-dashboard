@@ -7,5 +7,5 @@
 
     mysqli_query($conn,$del);
         
-    header('Location : managementSystem.php');
+    header("Location:managementSystem.php");
 ?>

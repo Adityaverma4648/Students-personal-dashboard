@@ -483,6 +483,27 @@ dashboard content
                                  </span>
                         </div>
                         <div class="row bg-primary " id="info">
+                          <?php
+                          
+                              include 'conn.php';
+                              $q = "select * FROM student_details";
+                              $query = mysqli_query($conn , $q);  
+
+                              // -----------------------------
+                              $stmt = $conn->PREPARE("INSERT INTO student_details(fileToUpload, name,  mothersname ,fathersname, branch , course , rollno ,studentid , address, contactno, email , password) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                               //---------------------------- 
+
+                              while($res = mysqli_fetch_array($query)){
+
+                              
+                              if ($conn->query($stmt) === TRUE) {
+                                $last_id = $conn->insert_id;
+
+                                // if($last_id ==  )
+                              }
+
+                                         
+                          ?>
                                          <div class="col-sm-5 text-center">
                                               <img src="./img/profile.png" alt="profile" class="profile" >
                                               <br>
@@ -545,7 +566,9 @@ dashboard content
                                                  Change password
                                           </button>
                                     </div>
-                                        
+                                        <?php
+                                               }
+                                         ?>
                         </div>
                     </div>
 

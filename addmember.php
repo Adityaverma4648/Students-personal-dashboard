@@ -41,7 +41,10 @@
                                            $branch = $_POST['branch'];
                                            $course = $_POST['course'];
                                            $DOB  = $_POST['DOB'];
-                                
+                                      
+                                           if($_POST['submit']){
+                                               header("Location:managementSystem.php");
+                                           }
                                              
                                       // binding
                                       $stmt = $conn->PREPARE("INSERT INTO collegeadmindashboard(designation, username, userid,  email , password, mothername ,fathername , branch , course ,DOB) VALUES (?,?,?,?,?,?,?,?,?,?)");

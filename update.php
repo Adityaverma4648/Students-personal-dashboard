@@ -33,7 +33,9 @@
               $course = $_POST['course'];
               $q = "update collegeadmindashboard set id = $id , username = '$username' , designation = '$designation', email = '$email' , branch = '$branch' , course = '$course' where id = $id";
 
-              header('Location : managementSystem.php');
+              if($_POST['submit']){
+                header("Location:managementSystem.php");
+              }
           }
 
 ?>
@@ -42,7 +44,7 @@
 
                                                     <div class="d-flex justify-content-between align-items-center">
                                                     <h5 class="text-dark">Update Member</h5>
-                                                     <a href="collegeauthdashboard.php" class="btn btn-outline-dark"> X </a>
+                                                     <a href="managementSystem.php" class="btn btn-outline-dark"> X </a>
                                                     </div>
 
                                                               <input type="text" name="designation" placeholder="Enter your post"  class="bg-dark text-white py-2 px-1 my-1 border-0" >

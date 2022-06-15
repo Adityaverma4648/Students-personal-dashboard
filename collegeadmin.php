@@ -37,8 +37,9 @@
                                        $query = mysqli_query($conn , $q);   
                                        $present = mysqli_num_rows($query);
                                        if($present){
-                                         header ('Location : collegeauthdashboard.php');
+                                         header ("Location:managementSystem.php");
                                        }
+                                       
                           }
                     ?>
     <section class="form-sec container" id="form-container">
@@ -68,21 +69,5 @@
                           login confirms that the user trying to login is a authorized person...    
                    --> 
     </section>
-    <section id="College-authority-dashboard">
-
-    </section>
-    <script>
-         
-     //     var form_container = document.getElementById('form-container');
-     //                                              var College_authority_dashboard = document.getElementById('College-authority-dashboard');
-     //                                              College_authority_dashboard.style.display = "none";
-          //     function toggleDisplay(){
-          //                                              if(submit_flag == 1){
-          //                                                       form_container.style.display = "none";
-          //                                                       College_authority_dashboard.style.display = "block";
-          //                                              }
-          
-          //                                         }
-    </script>
 </body>
 </html>

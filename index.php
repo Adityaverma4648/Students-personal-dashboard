@@ -22,20 +22,94 @@
                <link rel="stylesheet" href="style.css">      
 </head>
 <body class="d-flex justify-content-center align-items-center body-login">
-<?php
-         include 'conn.php';
-?>
+
     <section class="form-sec container">
                <h3 class="text-center text-muted">
                     Students Login Page</h3>
                     <?php
+                    // Initialize the session
+                            session_start();
+
+                            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                                header("location: dashboard.php");
+                                exit;
+                            }
+
+                            // conn / config
+                            require_once "conn.php";
+
+                    $userid_err = $password_err = $confirm_password_err = "";
                          if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-                                       $userid = $_POST['userid'];
-                                       $password = $_POST['password'];
-                                       if($_POST['submit']){
-                                          header('Location: dashboard.php');
+                                 // Check if username is empty
+                                        if(empty(trim($_POST["userid"]))){
+                                            $userid_err = "Please enter userid.";
+                                        } else{
+                                            $userid = trim($_POST["userid"]);
+                                        }
+    
+                                        // Check if password is empty
+                                        if(empty(trim($_POST["password"]))){
+                                            $password_err = "Please enter your password.";
+                                        } else{
+                                            $password = trim($_POST["password"]);
+                                        }
+
+                            // $sql = "SELECT id, userid, password FROM student_details WHERE username = ?";        
+                            
+    // Validate credentials
+             if(empty($userid_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT id, userid, password FROM student_details WHERE userid = ?";
+        
+        if($stmt = $mysqli->prepare($sql)){
+            // Bind variables to the prepared statement as parameters
+            $stmt->bind_param("s", $param_userid);
+            
+            // Set parameters
+            $param_userid = $userid;
+            
+            // Attempt to execute the prepared statement
+            if($stmt->execute()){
+                // Store result
+                $stmt->store_result();
+                
+                // Check if username exists, if yes then verify password
+                if($stmt->num_rows == 1){                    
+                    // Bind result variables
+                    $stmt->bind_result($id, $userid, $hashed_password);
+                    if($stmt->fetch()){
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+                            
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["userid"] = $userid;                            
+                            
+                            // Redirect user to welcome page
+                                               header("location: dashboard.php");
+                                           } else{
+                            // Password is not valid, display a generic error message
+                                               $login_err = "Invalid username or password.";
+                                           }
                                        }
-                          }
+                                   } else{
+                    // Username doesn't exist, display a generic error message
+                                       $login_err = "Invalid username or password.";
+                                   }
+                                  } else{
+                                      echo "Oops! Something went wrong. Please try again later.";
+                                  }
+
+                                  // Close statement
+                                  $stmt->close();
+                              }
+                          }                   
+    
+                          // Close connection
+                          $conn->close();
+                              }                                                              
                     ?>
 
                <form action="" method="post">
